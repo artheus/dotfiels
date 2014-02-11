@@ -41,4 +41,4 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Aliases
 
-cd () { builtin cd "$@" && ls -F; }
+cd () { builtin cd "$@" && ls --color; }

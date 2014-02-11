@@ -101,6 +101,15 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+# Media keys ( Spotify )
+bindsym XF86AudioPlay exec ~/.bin/spotify-control.sh play
+bindsym XF86AudioNext exec ~/.bin/spotify-control.sh next
+bindsym XF86AudioPrev exec ~/.bin/spotify-control.sh prev
+
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q -D pulse set Master 1+ toggle 
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2

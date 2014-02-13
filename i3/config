@@ -29,9 +29,6 @@ bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# xlock
-bindsym Ctrl+Shift+Escape exec xlock
-
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -162,3 +159,5 @@ bar {
 }
 
 exec_always /home/artheus/.i3/i3init
+
+exec pamusb-agent --daemon

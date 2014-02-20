@@ -5,7 +5,7 @@ promptinit
 
 autoload -U colors && colors
 setopt prompt_subst
-PROMPT=$'%{$fg[cyan]%}%n%{$reset_color%}@%m:%~ '
+PROMPT=$'%{$fg[cyan]%}%n%{$reset_color%}@%m:%~\n%(?..$fg[red])#%{$reset_color%} '
 
 setopt histignorealldups sharehistory
 

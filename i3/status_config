@@ -1,0 +1,25 @@
+general {
+	interval = 5
+}
+
+order += "disk /"
+order += "ethernet eth1"
+order += "load"
+order += "time"
+
+ethernet eth1 {
+	format_up = "%ip"
+	format_down = "eth down"
+}
+
+time {
+	format = "%Y-%m-%d %H:%M:%S"
+}
+
+load {
+	format = "%5min"
+}
+
+disk "/" {
+	format = "%free"
+}

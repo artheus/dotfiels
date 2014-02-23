@@ -10,4 +10,4 @@
 [help]
 	autocorrect = 1
 [push]
-	defaut = upstream
+	default = upstream

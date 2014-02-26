@@ -3,17 +3,17 @@ general {
 }
 
 order += "disk /"
-order += "ethernet eth1"
+order += "ethernet eth0"
 order += "load"
 order += "time"
 
-ethernet eth1 {
+ethernet eth0 {
 	format_up = "%ip"
 	format_down = "eth down"
 }
 
 time {
-	format = "%Y-%m-%d %H:%M:%S"
+	format = "v.%U %Y-%m-%d %a %H:%M:%S"
 }
 
 load {

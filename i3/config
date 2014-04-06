@@ -134,6 +134,7 @@ bindsym $mod+r mode "resize"
 bar {
 	position top
         status_command i3status --config ~/.i3/status_config
+#	status_command /home/artheus/.bin/statusbar
 	colors {
 		statusline #AAAAAA
 		background #333333
@@ -142,6 +143,9 @@ bar {
 	}
 }
 
+
+exec --no-startup-id nm-applet
+exec --no-startup-id gnome-sound-applet
 exec_always /home/artheus/.i3/i3init
 
 exec pamusb-agent --daemon

@@ -1,15 +1,29 @@
 general {
+	output_format = "i3bar"
 	interval = 5
 }
 
 order += "disk /"
+order += "battery 0"
 order += "ethernet eth0"
+order += "wireless wlan0"
 order += "load"
 order += "time"
 
 ethernet eth0 {
 	format_up = "%ip"
-	format_down = "eth down"
+	format_down = "no eth"
+}
+
+wireless wlan0 {
+	format_up = "%essid %ip"
+	format_down = "no wifi"
+}
+
+battery 0 {
+	format = "%percentage"
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 20
 }
 
 time {

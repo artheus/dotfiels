@@ -42,7 +42,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Aliases
 
-cd () { builtin cd "$@" && ls --color; }
+cd () { builtin cd "$@" && /bin/ls --color; }
 
 alias untgz="tar -xzvf"
 alias ssh="TERM=xterm ssh"
+alias ls="/bin/ls --color"

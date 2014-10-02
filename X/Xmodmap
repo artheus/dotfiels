@@ -1,5 +1,7 @@
+! reverse the mouse scroll
 pointer = 1 2 3 5 4 6 7 8 9 10 11 12
 
+! set the modifier keys
 keycode 108 = Super_R NoSymbol Super_R
 keycode 134 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift
 keycode 135 = Control_R NoSymbol Control_R
@@ -8,9 +10,24 @@ keycode 64 = Super_L NoSymbol Super_L
 keycode 133 = Alt_L Meta_L Alt_L
 keycode 37 = Control_L NoSymbol Control_L
 
+! set the media keys
 keycode 119 = XF86AudioMute NoSymbol XF86AudioMute
 keycode 115 = XF86AudioLowerVolume NoSymbol XF86AudioLowerVolume
 keycode 117 = XF86AudioRaiseVolume NoSymbol XF86AudioRaiseVolume
 keycode 112 = XF86AudioNext NoSymbol XF86AudioNext
 keycode 110 = XF86AudioPlay XF86AudioPause XF86AudioPlay XF86AudioPause
 keycode 118 = XF86AudioPrev NoSymbol XF86AudioPrev
+
+! change number keys to signs
+!!!
+
+! modify the function keys
+!!!
+
+! place the num caps and scroll lock keys
+!!!
+
+! make numlock key special for locking screen
+!!!
+
+

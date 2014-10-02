@@ -156,8 +156,18 @@ bar {
 }
 
 
+# Start my preferred applets
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-sound-applet
-exec_always /home/artheus/.i3/i3init
+exec --no-startup-id dropbox start
 
+# Start pamusb daemon
 exec pamusb-agent --daemon
+
+# Set up default workspaces
+workspace 1 output eDP1
+workspace 2 output DP1
+workspace 3 output eDP1
+workspace 4 output DP1
+
+exec ~/.i3/autostart

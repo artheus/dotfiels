@@ -1,0 +1,29 @@
+function untar() {
+	tar -xvzf $1
+}
+
+function ansenv() {
+        source "$HOME/.rc/ansible$1.rc"
+}
+
+function wp() {
+	cd "$WP/$1"
+}
+
+function reloadDns() {
+	echo "==============================="
+	echo "Reloading DNS search domains..."
+	echo "==============================="
+
+	printf "%s\n" "Unloading mDNSResponder.plist..."
+	sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+
+	printf "%s\n" "Loading mDNSResponder.plist..."
+	sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+
+	printf "%s\n" "Reloaded mDNSResponder.plist..."
+}
+
+function askpass() {
+	read -s -p 'Password:' PASSWORD
+}

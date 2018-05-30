@@ -1,0 +1,25 @@
+## INSTALLED COMPLETIONS
+
+preferred_completions=( brew brew-cask docker docker-machine.bash git-completion.bash git-prompt.sh maven npm pip vagrant )
+
+for pkgname in "${preferred_completions[@]}"
+do
+	if [ -f $BREW_PREFIX/etc/bash_completion.d/${pkgname} ]; then
+	  . $BREW_PREFIX/etc/bash_completion.d/${pkgname}
+	fi
+done
+
+# WORKSPACE completion
+__wp_path_comp()
+{
+	local cur_word="${COMP_WORDS[COMP_CWORD]}"
+	local wpcontent
+
+	wpcontent=`find $WP/${cur_word}* -maxdepth 0 -type d -print 2> /dev/null | sed -e "s|$WP/||" `
+
+    COMPREPLY=( $(compgen -W "$wpcontent" -S "/" -- $2) )
+}
+
+complete -o nospace -F __wp_path_comp wp
+complete -W "off status" proxy
+complete -W "edit" pass

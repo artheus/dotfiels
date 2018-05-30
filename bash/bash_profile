@@ -1,0 +1,42 @@
+## ENVIRONMENT
+export M2_HOME=/usr/local/Cellar/maven/3.5.0/libexec
+export M2=$M2_HOME/bin
+export PATH=$HOME/.tools/groovy-2.4.12/bin:$PATH:$M2:/Applications/Xcode.app/Contents/Developer/usr/bin
+
+export VAGRANT_CWD=$HOME/workspace/ansible/vagrant
+export VAGRANT_FORCE_COLOR=1
+
+export WP=$HOME/workspace
+
+export BREW_PREFIX=$(brew --prefix)
+
+## SSH
+eval `ssh-agent` > /dev/null	# Set environment for ssh-agent
+ssh-add -A 2> /dev/null		# Adding identities from keychain
+
+## ALIAS AND FUNCTIONS
+source ~/.bash_functions
+
+## COMPLETION
+source ~/.bash_completion
+
+## DOCKER-MACHINE
+
+export DM_STATUS=`docker-machine status`
+export DOCKER_HIDE_LEGACY_COMMANDS=true
+
+echo "Status of docker-machine: ${DM_STATUS}"
+
+if [ $DM_STATUS != "Running" ]; then
+	docker-machine start
+	if [ $? == 0 ]; then
+		eval `docker-machine env`
+	fi
+else
+	eval `docker-machine env`
+fi
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# MISC ALIAS
+alias g='git'

@@ -1,7 +1,5 @@
 set $mod Mod1
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -75,16 +73,10 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-# Media keys ( Spotify )
-bindsym XF86AudioPlay exec spotify-control play
-bindsym XF86AudioNext exec spotify-control next
-bindsym XF86AudioPrev exec spotify-control prev
-
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q -D pulse set Master 1+ toggle 
 
-# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -96,16 +88,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# key layout bindings for qwerty
-bindsym $mod+F9 exec "setxkbmap catnierds"
-bindsym $mod+F10 exec "setxkbmap se"
-bindsym $mod+F11 exec "setxkbmap ru"
-
-# key layout bindings for catnierds
-bindsym $mod+F5 exec "setxkbmap catnierds"
-bindsym $mod+F6 exec "setxkbmap se"
-bindsym $mod+F7 exec "setxkbmap ru"
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -113,7 +95,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -146,28 +128,7 @@ bindsym $mod+r mode "resize"
 bar {
 	position top
         tray_output primary
-        status_command statusbar
-	colors {
-		statusline #AAAAAA
-		background #333333
-		focused_workspace $gray2 $gray2 #FFFFFF
-		inactive_workspace $gray1 $gray1 #AAAAAA
-	}
+        status_command i3status
 }
 
-
-# Start my preferred applets
-exec --no-startup-id nm-applet
-exec --no-startup-id gnome-sound-applet
-exec --no-startup-id dropbox start
-
-# Start pamusb daemon
-exec pamusb-agent --daemon
-
-# Set up default workspaces
-workspace 1 output eDP1
-workspace 2 output DP1
-workspace 3 output eDP1
-workspace 4 output DP1
-
-exec ~/.i3/autostart
+exec setxkbmap se mac

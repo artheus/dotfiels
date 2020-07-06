@@ -1,13 +1,20 @@
 [user]
 	name = Morten Hekkvang
 	email = morten.hekkvang@gmail.com
-[core]
-	excludefile = ~artheus/.gitignore_global
-	editor = "subl -nw"
+
 [alias]
-	lol = log --graph --pretty=format:'%C(magenta)%h%Creset %C(yellow)%d%Creset %s %C(cyan)%an%Creset %Cgreen%cr' --abbrev-commit
-	s = status -sbu
+	l = log --graph --pretty=format:'%C(magenta)%h%Creset %C(yellow)%d%Creset %s %C(cyan)%an%Creset %Cgreen%cr' --abbrev-commit
+	st = status -sbu
+	fa = fetch --all
+	rhom = reset --hard origin/master
+	rhod = reset --hard origin/dev
+	c = commit
+	cm = commit -m
+	cam = commit -am
+	pf = push --force-with-lease
+
 [help]
 	autocorrect = 1
+
 [push]
 	default = upstream

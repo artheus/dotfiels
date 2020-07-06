@@ -11,7 +11,7 @@ precmd() {
   print "${fg[cyan]}${USER}${reset_color}@${HOSTNAME}"
 }
 
-PS1=$'%~ %(?..$fg[red])$%{$reset_color%} '
+PS1=$'%~ $ '
 
 setopt histignorealldups sharehistory
 
